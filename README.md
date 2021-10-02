@@ -1,5 +1,31 @@
-[![Meteor Icon](http://icon.meteor.com/package/useraccounts:core)](https://atmospherejs.com/useraccounts/core)
-[![Build Status](https://travis-ci.org/meteor-useraccounts/core.svg?branch=master)](https://travis-ci.org/meteor-useraccounts/core)
+# Compatibility
+
+**Compatible with Meteor 2.4**
+
+This repository provides versions for the package [useraccounts:core](https://github.com/meteor-useraccounts/core/) that are compatible with latest Meteor. This is necessary because the author is not maintaining package anymore.
+
+## Changes
+- v1.15.0
+  - `api.versionsFrom` on `Package.onUse` was changed from `1.0.3` to `2.4` to avoid errors like:
+      ```txt
+      => Errors while adding packages:             
+                                                  
+      While selecting package versions:
+      error: Conflict: Constraint accounts-base@1.1.3 is not satisfied by
+      accounts-base 2.1.0.
+      Constraints on package "accounts-base":
+      * accounts-base@~2.1.0 <- top level
+      * accounts-base@1.1.3 <- useraccounts:core 1.14.2
+      * accounts-base@2.1.0 <- service-configuration 1.2.0 <- accounts-base 2.1.0 <-
+      useraccounts:core 1.14.2
+      ```
+  - added version in a few packages:
+      ```txt
+      blaze@2.5.0
+      templating@1.4.1
+      jquery@3.0.0
+      http@1.0.0||2.0.0
+      ```
 
 # User Accounts
 
