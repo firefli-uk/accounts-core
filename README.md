@@ -2,7 +2,7 @@
 
 **Compatible with Meteor 2.4**
 
-This repository provides versions for the package [useraccounts:core](https://github.com/meteor-useraccounts/core/) that are compatible with latest Meteor. This is necessary because the author is not maintaining package anymore.
+This repository provides versions for the package [useraccounts:core](https://github.com/meteor-compat/useraccounts-core/) that are compatible with latest Meteor. This is necessary because the author is not maintaining package anymore.
 
 ## Changes
 - v1.15.0
