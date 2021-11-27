@@ -6,7 +6,7 @@ This repository provides versions for the package [useraccounts:core](https://gi
 
 ## Changes
 
-- v1.15.1
+- v1.16.0
   - [T9n](https://github.com/softwarerero/meteor-accounts-t9n) was updated to the last version which is an NPM package (because of low coffeescript dependency in previous version). `T9n` object is exposed globally to the app after adding `useraccounts:core`. If you need to add more languages, you need to add the npm package to your app `meteor npm install --save meteor-accounts-t9n` to be able to require the language file and set it up :
   ```javascript
   T9n.map('fr', require('meteor-accounts-t9n/build/fr'));
