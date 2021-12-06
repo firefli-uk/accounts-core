@@ -26,7 +26,7 @@ Package.onUse(function(api) {
     'blaze@2.5.0',
     'reactive-dict',
     'templating@1.4.1',
-    'jquery@3.0.0'
+    'jquery@1.11.9||3.0.0'
   ], 'client');
 
   api.use([
