@@ -6,6 +6,10 @@ This repository provides versions for the package [useraccounts:core](https://gi
 
 ## Changes
 
+- v1.16.2
+  - Fix username login when using 'username_and_email' field. [PR](https://github.com/meteor-compat/useraccounts-core/pull/6).
+  - Fix T9n initialization issue. [PR](https://github.com/meteor-compat/useraccounts-core/pull/5).
+
 - v1.16.1
   - Allow jQuery 1 as well.
  
@@ -37,6 +41,8 @@ This repository provides versions for the package [useraccounts:core](https://gi
       jquery@3.0.0
       http@1.0.0||2.0.0
       ```
+
+- [Previous changes](./History.md)
 
 # User Accounts
 
