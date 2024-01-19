@@ -1,5 +1,24 @@
 ## Master
 
+## v1.16.3
+  - Compatibility with Meteor v.3.0
+
+## v1.16.2
+  - Fix username login when using 'username_and_email' field. [PR](https://github.com/meteor-compat/useraccounts-core/pull/6).
+  - Fix T9n initialization issue. [PR](https://github.com/meteor-compat/useraccounts-core/pull/5).
+
+## v1.16.1
+  - Allow jQuery 1 as well.
+
+## v1.16.0
+  - [T9n](https://github.com/softwarerero/meteor-accounts-t9n) was updated to the last version which is an NPM package (because of low coffeescript dependency in previous version). `T9n` object is exposed globally to the app after adding `useraccounts:core`. If you need to add more languages, you need to add the npm package to your app `meteor npm install --save meteor-accounts-t9n` to be able to require the language file and set it up :
+    ```javascript
+    T9n.map('fr', require('meteor-accounts-t9n/build/fr'));
+    ```
+
+## v1.15.0
+  - `api.versionsFrom` on `Package.onUse` was changed from `1.0.3` to `2.4`
+
 ## v1.14.2
 
 * [flow-routing] fixed dependency on kadira:flow-router: now using the last non-Meteor@1.3 one
