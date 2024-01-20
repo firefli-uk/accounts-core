@@ -16,6 +16,7 @@ Package.onUse(function(api) {
 
   api.use([
     'accounts-base',
+    'service-configuration',
     'check',
     'underscore',
     'reactive-var',
@@ -30,7 +31,7 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.use([
-    'http@1.0.0||2.0.0'
+    'fetch'
   ], 'server');
 
   api.imply([
@@ -85,7 +86,7 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use('useraccounts:core@1.14.2');
+  api.use('useraccounts:core@1.16.3');
 
   api.use([
     'accounts-password',
