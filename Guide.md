@@ -803,8 +803,8 @@ If, differently, you do something like this:
 ```javascript
 if (Meteor.isServer){
     Meteor.methods({
-        "userExists": function(username){
-            return !!Meteor.users.findOne({username: username});
+        "userExists": async function(username){
+            return !!(await Meteor.users.findOneAsync({username: username}));
         },
     });
 }
@@ -1396,9 +1396,9 @@ Normally, if you have not configured a social account with, e.g.,
 
 ```javascript
 // Set up login services
-Meteor.startup(function() {
+Meteor.startup(async function() {
     // Add Facebook configuration entry
-    ServiceConfiguration.configurations.update(
+    await ServiceConfiguration.configurations.updateAsync(
       { "service": "facebook" },
       {
         $set: {
@@ -1410,7 +1410,7 @@ Meteor.startup(function() {
     );
 
     // Add GitHub configuration entry
-    ServiceConfiguration.configurations.update(
+    await ServiceConfiguration.configurations.updateAsync(
       { "service": "github" },
       {
         $set: {
