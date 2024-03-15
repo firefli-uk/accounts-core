@@ -11,11 +11,12 @@ Npm.depends({
   "meteor-accounts-t9n": "2.6.0",
 });
 
-Package.onUse(function (api) {
-  api.versionsFrom(['METEOR@2.8.0', '3.0-beta.0']);
+Package.onUse(function(api) {
+  api.versionsFrom(['METEOR@2.4', "METEOR@3.0-beta.0"]);
 
   api.use([
     'accounts-base',
+    'service-configuration',
     'check',
     'underscore',
     'reactive-var',
@@ -23,14 +24,14 @@ Package.onUse(function (api) {
   ], ['client', 'server']);
 
   api.use([
-    'blaze',
+    'blaze@2.5.0||3.0.0-alpha300.17',
     'reactive-dict',
     'templating',
     'jquery@3.0.0'
   ], 'client');
 
   api.use([
-    'http@1.0.0||2.0.0'
+    'fetch'
   ], 'server');
 
   api.imply([
@@ -85,7 +86,7 @@ Package.onUse(function (api) {
 });
 
 Package.onTest(function (api) {
-  api.use('useraccounts:core@1.14.2');
+  api.use('useraccounts:core@1.16.3');
 
   api.use([
     'accounts-password',

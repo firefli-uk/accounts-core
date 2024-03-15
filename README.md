@@ -9,6 +9,9 @@ This repository provides versions for the package [useraccounts:core](https://gi
 - v1.17.0
   - Updated to support new MongoDB API.
 
+- v1.16.3
+  - Fixed compatible with Meteor v3.0.
+
 - v1.16.2
   - Fix username login when using 'username_and_email' field. [PR](https://github.com/meteor-compat/useraccounts-core/pull/6).
   - Fix T9n initialization issue. [PR](https://github.com/meteor-compat/useraccounts-core/pull/5).
