@@ -1,5 +1,8 @@
 ## Master
 
+## v1.17.0
+* Updated to support new MongoDB API on Meteor 2.8.0+.
+
 ## v1.14.2
 
 * [flow-routing] fixed dependency on kadira:flow-router: now using the last non-Meteor@1.3 one
