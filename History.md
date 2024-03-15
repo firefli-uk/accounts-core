@@ -1,5 +1,8 @@
 ## Master
 
+## v1.17.0
+* Updated to support new MongoDB API on Meteor 2.8.0+.
+
 ## v1.16.3
   - Compatibility with Meteor v.3.0
 
