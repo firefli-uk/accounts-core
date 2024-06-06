@@ -6,6 +6,9 @@ This repository provides versions for the package [useraccounts:core](https://gi
 
 ## Changes
 
+- v1.17.2
+  - Fixed a bug with const declaration instead let and update guide. [PR](https://github.com/meteor-compat/useraccounts-core/pull/10).
+
 - v1.17.0
   - Updated to support new MongoDB API.
 
