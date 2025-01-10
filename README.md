@@ -1,10 +1,19 @@
 # Compatibility
 
-**Compatible with Meteor 2.4**
+**Compatible with Meteor 2.8.0**
 
 This repository provides versions for the package [useraccounts:core](https://github.com/meteor-compat/useraccounts-core/) that are compatible with latest Meteor. This is necessary because the author is not maintaining package anymore.
 
 ## Changes
+
+- v1.17.2
+  - Fixed a bug with const declaration instead let and update guide. [PR](https://github.com/meteor-compat/useraccounts-core/pull/10).
+
+- v1.17.0
+  - Updated to support new MongoDB API.
+
+- v1.16.3
+  - Fixed compatible with Meteor v3.0.
 
 - v1.16.2
   - Fix username login when using 'username_and_email' field. [PR](https://github.com/meteor-compat/useraccounts-core/pull/6).

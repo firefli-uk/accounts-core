@@ -3,7 +3,6 @@ User Accounts
 
 User Accounts is a suite of packages for the [Meteor.js](https://www.meteor.com/) platform. It provides highly customizable user accounts UI templates for many different front-end frameworks. At the moment it includes forms for sign in, sign up, forgot password, reset password, change password, enroll account, and link or remove of many 3rd party services.
 
-<a name="documentation"/>
 # Documentation
 
 * [Features](#features)
@@ -39,7 +38,6 @@ User Accounts is a suite of packages for the [Meteor.js](https://www.meteor.com/
   * [3rd Party Login Services Configuration](#3rd-party-login-services-configuration)
 
 
-<a name="features"/>
 ## Features
 
 * fully customizable
@@ -54,13 +52,8 @@ User Accounts is a suite of packages for the [Meteor.js](https://www.meteor.com/
 * very easily stylizable for different font-end frameworks
 * ...[wrap it up for famo.us](#wrapping-up-for-famo.us) with a simple meteor line!
 
-
-
-<a name="quickstart"/>
 ## Quick Start
 
-
-<a name="available-versions"/>
 ### Available Versions
 
 * [useraccounts:bootstrap](https://atmospherejs.com/useraccounts/bootstrap) styled for [Twitter Bootstrap](http://getbootstrap.com/)
@@ -73,15 +66,12 @@ User Accounts is a suite of packages for the [Meteor.js](https://www.meteor.com/
 * [useraccounts:unstyled](https://atmospherejs.com/useraccounts/unstyled) with plain html and no CSS rules
 * plus others coming soon...
 
-
-<a name="boilerplates"/>
 ### Boilerplates
 
 For a very very quick start you can find some boilerplate examples inside [this repository](https://github.com/meteor-useraccounts/boilerplates).
 
 We'll try to make them richer and richer, while still keeping them as general as possible.
 
-<a name="setup"/>
 ### Setup
 
 Just choose one of the packages among the [available styled versions](#available-versions) and install it:
@@ -111,16 +101,12 @@ And that's it!
 ...but don't expect to see much without doing something more ;-)
 This is to let you configure your app exactly the way you wish, without imposing anything beforehand!
 
-
-<a name="routing"/>
 ### Routing
 
 If you'd like to easily configure specific routes to deal with accounts management, you might be interested to check out
-[useraccounts:iron-routing](https://github.com/meteor-useraccounts/iron-routing) and [useraccounts:flow-routing](https://github.com/meteor-useraccounts/flow-routing) packages.
+[useraccounts:iron-routing](https://github.com/meteor-compat/useraccounts-iron-routing) and [useraccounts:flow-routing](https://github.com/meteor-compat/useraccounts-flow-routing) packages.
 They provide very easy routes set-up via the `AccountsTemplates.configureRoute` method.
 
-
-<a name="templates"/>
 ### Templates
 
 There is **only one template** which is used to reactively draw appropriate sign in, sign up, forgot password, reset password, change password, and enroll account forms!
@@ -146,12 +132,8 @@ Well, actually there is many, used inside `atForm`...
 
 ...plus one another: `atNavButton` which can be used inside navbars to get a basic sign-in sign-out button which changes text and behaviour based on the user status (to get it working you should set up at least a `signIn` route).
 
-
-<a name="basic-customization"/>
 ## Basic Customization
 
-
-<a name="i18n"/>
 ### I18n Support
 
 i18n is achieved using [accounts-t9n](https://atmospherejs.com/softwarerero/accounts-t9n). The only thing you have to do is ensure
@@ -162,8 +144,6 @@ T9n.setLanguage('<lang>');
 
 is called somewhere, whenever you want to switch language.
 
-
-<a name="configuration-api"/>
 ### Configuration API
 
 There are basically two different ways to interact with AccountsTemplates for basic configuration:
@@ -177,8 +157,6 @@ There is no specific order for the above calls to be effective, and you can call
 
 **The only other requirement is to make exactly the same calls on both the server and the client.** The best thing is to put everything inside a file shared between both. I suggest you use something like `lib/config/at_config.js`
 
-
-<a name="options"/>
 #### Options
 
 By calling `AccountsTemplates.configure(options)` you can specify a bunch of choices regarding both visual appearance and behavior.
@@ -307,7 +285,6 @@ AccountsTemplates.configure({
 });
 ```
 
-<a name="logout"/>
 ##### AccountsTemplates.logout()
 
 Should be used in place of `Meteor.logout()`.  This function invokes the `onLogoutHook` specified in the optional configuration.
@@ -332,7 +309,6 @@ AccountsTemplates.configure({
 });
 ```
 
-<a name="internal-states"/>
 ### Internal States
 
 The `atForm` template changes reactively based on the current internal state of AccountsTemplates.
@@ -354,10 +330,7 @@ Currently available states are:
 | verifyEmail             | Only the result about email verification                                              |
 
 
-
-<a name="content-protection"/>
 ### Content Protection
-
 
 If you want to secure a specific template, you could add that template like this:
 
@@ -375,11 +348,9 @@ That custom auth template just needs to include `{{> atForm}}` somewhere in it. 
 `fullPageAtForm` does).
 
 
-In case you're using one of the routing packages [useraccounts:iron-routing](https://github.com/meteor-useraccounts/iron-routing)
-or [useraccounts:flow-routing](https://github.com/meteor-useraccounts/flow-routing) refer to their documentation for more possibilities.
+In case you're using one of the routing packages [useraccounts:iron-routing](https://github.com/meteor-compat/iron-routing)
+or [useraccounts:flow-routing](https://github.com/meteor-compat/flow-routing) refer to their documentation for more possibilities.
 
-
-<a name="reCaptcha-setup"/>
 ### reCaptcha Setup
 To set up [reCaptcha](https://www.google.com/recaptcha/intro/index.html), you need to first obtain API keys.
 
@@ -442,7 +413,6 @@ Each option is described below:
 | data_type                   | String   | "image"   | Sets the verification method. Options are "image" or "audio". |
 | showReCaptcha               | Boolean  | false     | Whether to show the reCaptcha widget on sign in or not. No reCaptcha validation will occur if set to false. |
 
-<a name="detect-reactively-when-a-form-is-being-processed"/>
 ### Detect reactively when a form is being processed
 
 `AccountsTemplates.disabled()` returns `true` when a submitted form is being processed and `false` once the submission process has been completed (successfully or not). `AccountsTemplate.disabled()` is reactive and can be used to trigger UI events, such as spinners, "Please wait" messages or to disable input elements, while the form is being processed. The function works irrespectively of form status (signIn, signUp, pwdReset etc.). A typical use-case would be in a template helper:
@@ -469,11 +439,8 @@ Template.myLogin.helpers({
 });
 ```
 
-<a name="advanced-customization"/>
 ## Advanced Customization
 
-
-<a name="configuring-texts"/>
 ### Configuring Texts
 
 In case you wish to change texts on atForm, you can call:
@@ -517,8 +484,6 @@ AccountsTemplates.configure({
 the above example asks to change some of the available text configurations. You can specify only a subsets of them leaving default values unchanged.
 To learn how to change title, button, social buttons' icon, info, and errors text read below.
 
-
-<a name="form-title"/>
 #### Form Title
 
 In case you wish to change form titles, you can call:
@@ -555,8 +520,6 @@ AccountsTemplates.configure({
 
 no title will be shown on the sign in form.
 
-
-<a name="button-text"/>
 #### Button Text
 
 In case you wish to change the text appearing inside the submission button, you can call:
@@ -578,7 +541,6 @@ AccountsTemplates.configure({
 
 the above example asks to change the button text for all possible form states, but you can specify only a subset of them leaving default values unchanged.
 
-<a name="social-button-icons"/>
 #### Social Button Icons
 
 In case you wish to change the icon appearing on the left of social login buttons, you can call:
@@ -598,7 +560,6 @@ to specify a different icon classes to be used for services. By default the icon
 but for the "meteor-developer" service for which `fa fa-rocket` is used. An exception is made for `useaccounts:semantic-ui`
 which sets them simply to `*service*`, which is the correct way to go.
 
-<a name="info-text"/>
 #### Info Text
 
 In case you wish to change the info text appearing inside the results box, you can call:
@@ -621,7 +582,6 @@ AccountsTemplates.configure({
 
 The above calls simply set all values as the current default ones.
 
-<a name="input-icons"/>
 #### Input Field Icons
 
 In case you wish to change the icon appearing on the right side of input fields to show their validation status, you can call:
@@ -638,7 +598,6 @@ AccountsTemplates.configure({
 });
 ```
 
-<a name="errors-text"/>
 #### Errors Text
 
 In case you wish to change the text for errors appearing inside the error box, you can call:
@@ -665,8 +624,6 @@ The above calls simply set all values as the current default ones.
 Errors which comes from the Accounts packages cannot be overwritten (at least not easily...)
 Please have a look at [Form Fields Configuration](#form-fields-configuration) to learn how to set validation errors on a field basis.
 
-
-<a name="disabling-client-side-accounts-creation"/>
 ### Disabling Client-side Accounts Creation
 
 AccountsTemplates disables by default accounts creation on the client. This is done to use a dedicated method called `ATCreateUserServer` **(sending the password on the wire already hashed as usual...)** to create the new users server-side.
@@ -691,11 +648,9 @@ Accounts.config({
 });
 ```
 
-
-<a name="form-fields-configuration"/>
 ### Form Fields Configuration
 
-Every input field appearing inside AccountsTemplates forms can be easily customized both for appearance and validation behaviour. Additional (custom) fields can be added to the sign up and registration forms, and the properties of built-in fields, like `email` and `password` can be overridden (see [Remove fields](https://github.com/meteor-useraccounts/core/blob/master/Guide.md#remove-fields))
+Every input field appearing inside AccountsTemplates forms can be easily customized both for appearance and validation behaviour. Additional (custom) fields can be added to the sign up and registration forms, and the properties of built-in fields, like `email` and `password` can be overridden (see [Remove fields](#remove-fields))
 
 Each field object is represented by the following properties:
 
@@ -722,7 +677,7 @@ Each field object is represented by the following properties:
 | negativeFeedback     | Boolean          |          | Display negative validation feedback inside input elements. |
 | positiveFeedback     | Boolean          |          | Display positive validation feedback inside input elements. |
 | showValidating       | Boolean          |          | Display a loading icon inside input elements while the validation process is in progress. |
-| options              | Object           |          | Allows to pass in additional custom options to be possibly used to extend input templates (see [Extending Templates](https://github.com/meteor-useraccounts/core/blob/master/Guide.md#extending-templates))  |
+| options              | Object           |          | Allows to pass in additional custom options to be possibly used to extend input templates (see [Extending Templates](#extending-templates))  |
 | template             | String           |          | The name of a custom template to be used in place of the default one. |
 
 
@@ -803,8 +758,8 @@ If, differently, you do something like this:
 ```javascript
 if (Meteor.isServer){
     Meteor.methods({
-        "userExists": function(username){
-            return !!Meteor.users.findOne({username: username});
+        "userExists": async function(username){
+            return !!(await Meteor.users.findOneAsync({username: username}));
         },
     });
 }
@@ -917,7 +872,7 @@ There are a number of special ids used for basic input fields. These are:
 * username_and_email
 
 Any other id will be interpreted as an additional sign up field.
-In case a special field is not explicitly added, it will be automatically inserted at initialization time (with appropriate default properties). To customize special fields see [Remove fields](https://github.com/meteor-useraccounts/core/blob/master/Guide.md#remove-fields)
+In case a special field is not explicitly added, it will be automatically inserted at initialization time (with appropriate default properties). To customize special fields see [Remove fields](#remove-fields)
 
 #### Add a field
 
@@ -1029,8 +984,6 @@ AccountsTemplates.addFields([
 ]);
 ```
 
-
-<a name="extending-templates"/>
 ### Extending Templates
 
 With the [aldeed:template-extension](https://github.com/aldeed/meteor-template-extension) package, the built-in templates or sub-templates of any `user-accounts` UI package may be replaced by custom templates. The purpose is to create more sophisticated or specialized layouts or styling.
@@ -1077,16 +1030,12 @@ AccountsTemplates.addField({
 Template.appAtInput.replaces("atInput");
 ```
 
-
-<a name="grouping-fields"/>
 #### Grouping fields
 
 Grouping fields together is a special problem in regard to layout. The issue is creating some container markup *while* iterating over the fields (the templating engine of Meteor doesn't allow outputting an opening tag inside a loop without closing it in the same iteration).
 
 A solution to the problem is demonstrated in [this gist](https://gist.github.com/dalgard/a844f6569d8f471db9a7) (Semantic UI version).
 
-
-<a name="css-rules"/>
 ### CSS Rules
 
 The main atForm is build up of several pieces, appearing and disappearing based on configuration options as well as the current internal status.
@@ -1191,9 +1140,6 @@ Below is a html snapshot of an over-complete `atForm` taken from the unstyled ve
 </div>
 ```
 
-
-
-<a name="wrapping-up-for-famo.us"/>
 ## Wrapping Up for Famo.us
 
 By simply typing
@@ -1384,21 +1330,17 @@ The first animation is started after `animQueueStartDelay` milliseconds from the
 And that's it!
 Enjoy ;-)
 
-
-<a name="side-notes"/>
 ## Side Notes
 
-
-<a name="3rd-party-login-services-configuration"/>
 ### 3rd Party Login Services Configuration
 
 Normally, if you have not configured a social account with, e.g.,
 
 ```javascript
 // Set up login services
-Meteor.startup(function() {
+Meteor.startup(async function() {
     // Add Facebook configuration entry
-    ServiceConfiguration.configurations.update(
+    await ServiceConfiguration.configurations.updateAsync(
       { "service": "facebook" },
       {
         $set: {
@@ -1410,7 +1352,7 @@ Meteor.startup(function() {
     );
 
     // Add GitHub configuration entry
-    ServiceConfiguration.configurations.update(
+    await ServiceConfiguration.configurations.updateAsync(
       { "service": "github" },
       {
         $set: {

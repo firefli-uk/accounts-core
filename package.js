@@ -2,7 +2,7 @@
 
 Package.describe({
   summary: 'Meteor sign up and sign in templates core package.',
-  version: '1.16.2',
+  version: '1.17.2',
   name: 'firefli-uk:accounts-core',
   git: 'https://github.com/firefli-uk/accounts-core',
 });
@@ -12,10 +12,11 @@ Npm.depends({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@2.4');
+  api.versionsFrom(['METEOR@2.4', "METEOR@3.0-beta.0"]);
 
   api.use([
     'accounts-base',
+    'service-configuration',
     'check',
     'underscore',
     'reactive-var',
@@ -23,14 +24,14 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.use([
-    'blaze@2.5.0',
+    'blaze@2.5.0||3.0.0-alpha300.17',
     'reactive-dict',
-    'templating@1.4.1',
-    'jquery@1.11.9||3.0.0'
+    'templating@1.4.3||1.4.4-alpha300.17',
+    'jquery@3.0.0'
   ], 'client');
 
   api.use([
-    'http@1.0.0||2.0.0'
+    'fetch'
   ], 'server');
 
   api.imply([
@@ -84,8 +85,8 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 });
 
-Package.onTest(function(api) {
-  api.use('useraccounts:core@1.14.2');
+Package.onTest(function (api) {
+  api.use('useraccounts:core@1.16.3');
 
   api.use([
     'accounts-password',
